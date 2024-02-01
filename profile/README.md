@@ -1,6 +1,7 @@
 # InKCreThing
-InKCreThing is an organization/team aiming at solving problems on the path from information to knowledge.
 The name is from the core product InKCre.
+
+InKCreThing is an organization/team aiming at solving problems on the path from information to production.
 
 
 ## InKCre
