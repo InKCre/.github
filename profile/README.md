@@ -11,7 +11,7 @@ Here are translations of the name.
 - Chinese: 翰墨为机
 - English: InKCre
 
-### Orgigins
+### Origins
 *Information, Knowledge, Creation*: These three words are the main topics of this product.
 
 #### Explanation of English Version
