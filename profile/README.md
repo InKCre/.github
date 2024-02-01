@@ -8,23 +8,22 @@ InKCre is the core product of InKCreThing
 
 ### Name
 Here are translations of the name.
-Chinese: 翰墨为机
-English: InKCre
+- Chinese: 翰墨为机
+- English: InKCre
 
 ### Orgigins
-产品的三个主题：Information, Knowledge, Creation
-本产品致力于解决在这个信息爆炸的时代下信息与知识服务于创造的问题
+*Information, Knowledge, Creation*: These three words are the main topics of this product.
 
 #### Explanation of English Version
-*In* stands for Information
-*K* stands for Knowledge
-*Cre* stands for Creation
+- *In* stands for Information
+- *K* stands for Knowledge
+- *Cre* stands for Creation
 
-These three words are the main topics of this product.
 
 This abbreviation has the following advantages:
-InKCre sounds like *increase*, suggesting the accumulation of knowledge.
-Besides, Ink sounds like *ink*, implying notes. 
+
+- InKCre sounds like *increase*, suggesting the accumulation of knowledge.
+- Ink sounds like *ink*, implying notes. 
 
 #### Explanation of Chinese Version
 - "翰墨"代表笔墨，象征信息、知识、思考
