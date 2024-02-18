@@ -9,7 +9,7 @@ InKCre is the core product of InKCreThing
 
 ### Name
 Here are translations of the name.
-- Chinese: 翰墨为机
+- Chinese: 翰墨化机
 - English: InKCre
 
 ### Origins
@@ -28,7 +28,7 @@ This abbreviation has the following advantages:
 
 #### Explanation of Chinese Version
 - "翰墨"代表笔墨，象征信息、知识、思考
-- "为机"表示翰墨是为了机遇、创造
+- "化机"表示积累的翰墨都是为了获得机遇、迸发创造
 
 
 <!--
