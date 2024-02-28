@@ -15,8 +15,9 @@ hero:
       link: /api-examples
 
 features:
-  - title: Feature A
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
+  - title: InKCreThing Blog
+    details: View our posts to know our activities
+    link: https://inkcre.blog.hadream.ltd
   - title: Feature B
     details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
   - title: Feature C
