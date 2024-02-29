@@ -5,7 +5,6 @@ export default defineConfig({
   title: "InKCreThing Document",
   description: "InKCreThing Organization's Knowledge Base",
   themeConfig: {
-    // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: 'Home', link: '/' },
       { text: 'Examples', link: '/markdown-examples' }
@@ -22,7 +21,21 @@ export default defineConfig({
     ],
 
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/vuejs/vitepress' }
+      { icon: 'github', link: 'https://github.com/InKCre' }
     ]
+  },
+
+  locales: {
+    root: {
+      label: 'English',
+      lang: 'en'
+    },
+    fr: {
+      label: 'Simplified Chinese',
+      lang: 'zh-cn', // 可选，将作为 `lang` 属性添加到 `html` 标签中
+      link: '/zh-cn/guide' // 默认 /fr/ -- 显示在导航栏翻译菜单上，可以是外部的
+
+      // 其余 locale 特定属性...
+    }
   }
 })
