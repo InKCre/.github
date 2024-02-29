@@ -1,13 +1,12 @@
 import { defineConfig } from 'vitepress'
 
-// https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: "InKCreThing Document",
-  description: "InKCreThing Organization's Knowledge Base",
+  description: "InKCreThing's Knowledge Base",
   themeConfig: {
     nav: [
       { text: 'Home', link: '/' },
-      { text: 'Examples', link: '/markdown-examples' }
+      { text: 'Efforts', link: '/markdown-examples' }
     ],
 
     sidebar: [
@@ -22,7 +21,9 @@ export default defineConfig({
 
     socialLinks: [
       { icon: 'github', link: 'https://github.com/InKCre' }
-    ]
+    ],
+
+    i18nRouting: true
   },
 
   locales: {
