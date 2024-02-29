@@ -20,3 +20,7 @@
 > *K* 就是 Knowledge/知识
 > *Cre* 就是 Creation/创造
 > "InKCre" 听起来像是 ink(墨迹，代表知识笔记) create(创造) or increase(积累、增加)
+
+### 我们的团队成员
+
+请见：[我们的团队](./team)

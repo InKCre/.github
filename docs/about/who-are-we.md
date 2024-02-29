@@ -21,3 +21,7 @@ For English name *InKCre*:
 For Chinese name *翰墨化机*:
 > "翰墨" means ink, implying information, knowledge and thoughts ...
 > "化机" means all these ink will turn into opporunities and creation
+
+### Our Team Members  
+
+See page: [Our Team](./team)  
