@@ -2,11 +2,21 @@ import type { DefaultTheme, LocaleSpecificConfig } from 'vitepress'
 
 export const enConfig: LocaleSpecificConfig<DefaultTheme.Config> = {
     themeConfig: {
+        siteTitle: "InKCreThing Document",
+
+        // lastUpdated: true,
         lastUpdatedText: 'Last Updated',
         returnToTopLabel: 'Back to Top',
         docFooter: {
             prev: 'Previous',
             next: 'Next'
+        },
+        search: {
+            provider: 'local'
+        },
+        editLink: {
+            pattern: 'https://github.com/InKCre/.github/edit/main/docs/:path',
+            text: "Edit this page on GitHub"
         },
 
         nav: [

@@ -2,11 +2,21 @@ import type { DefaultTheme, LocaleSpecificConfig } from 'vitepress'
 
 export const zhConfig: LocaleSpecificConfig<DefaultTheme.Config> = {
     themeConfig: {
+        siteTitle: "InKCreThing 文档",
+        
+        // lastUpdated: true,
         lastUpdatedText: '最后更新',
         returnToTopLabel: '返回顶部',
         docFooter: {
             prev: '上一篇',
             next: '下一篇'
+        },
+        search: {
+            provider: 'local'
+        },
+        editLink: {
+            pattern: 'https://github.com/InKCre/.github/edit/main/docs/:path',
+            text: "在GitHub上编辑该页面"
         },
 
         nav: [
@@ -33,8 +43,8 @@ export const zhConfig: LocaleSpecificConfig<DefaultTheme.Config> = {
             {
                 text: 'Examples',
                 items: [
-                { text: 'Markdown Examples', link: '/markdown-examples' },
-                { text: 'Runtime API Examples', link: '/api-examples' }
+                    { text: 'Markdown Examples', link: '/markdown-examples' },
+                    { text: 'Runtime API Examples', link: '/api-examples' }
                 ]
             }
         ],

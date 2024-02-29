@@ -1,6 +1,7 @@
 import { defineConfig } from 'vitepress'
 
 import { enConfig } from './en-config.ts'
+import { zhConfig } from './zh-config.ts'
 
 export default defineConfig({
     title: "InKCreThing Document",
@@ -15,7 +16,7 @@ export default defineConfig({
         fr: {
             label: 'Simplified Chinese',
             lang: 'zh-cn',
-            link: '/zh-cn/' 
+            link: '/zh-cn/',
             ...zhConfig
         }
     }
