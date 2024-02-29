@@ -21,32 +21,25 @@ export const zhConfig: LocaleSpecificConfig<DefaultTheme.Config> = {
 
         nav: [
             { text: "主页", link: "/" },
-            { text: "我们的成果", link: "/efforts" },
+            { text: "我们的成果", link: "/zh-cn/efforts" },
             {
                 text: "关于",
                 items: [
                     {
                     text: "我们的使命",
-                    link: "/about/mission",
-                    activeMatch: "/about/mission",
+                    link: "/zh-cn/about/mission",
+                    activeMatch: "/zh-cn/about/mission",
                     },
             
                     {
                     text: "加入我们",
-                    link: "/about/join",
-                    activeMatch: "/about/join",
+                    link: "/zh-cn/about/join",
+                    activeMatch: "/zh-cn/about/join",
                     },
                 ]
             }
         ],
         sidebar: [
-            {
-                text: 'Examples',
-                items: [
-                    { text: 'Markdown Examples', link: '/markdown-examples' },
-                    { text: 'Runtime API Examples', link: '/api-examples' }
-                ]
-            }
         ],
         outline: {
             level: "deep", 
