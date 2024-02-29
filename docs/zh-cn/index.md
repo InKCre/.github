@@ -10,7 +10,7 @@ hero:
         text: 我们的成果
         link: /zh-cn/efforts
       - theme: alt
-        text: 我们的成果
+        text: 我们的使命
         link: /zh-cn/about/mission
       - theme: alt
         text: 我们的团队
