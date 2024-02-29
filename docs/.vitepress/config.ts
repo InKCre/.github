@@ -1,28 +1,23 @@
 import { defineConfig } from 'vitepress'
 
-// https://vitepress.dev/reference/site-config
+import { enConfig } from './en-config.ts'
+import { zhConfig } from './zh-config.ts'
+
 export default defineConfig({
-  title: "InKCreThing Document",
-  description: "InKCreThing Organization's Knowledge Base",
-  themeConfig: {
-    // https://vitepress.dev/reference/default-theme-config
-    nav: [
-      { text: 'Home', link: '/' },
-      { text: 'Examples', link: '/markdown-examples' }
-    ],
+    title: "InKCreThing Document",
+    description: "InKCreThing's Knowledge Base",
 
-    sidebar: [
-      {
-        text: 'Examples',
-        items: [
-          { text: 'Markdown Examples', link: '/markdown-examples' },
-          { text: 'Runtime API Examples', link: '/api-examples' }
-        ]
-      }
-    ],
-
-    socialLinks: [
-      { icon: 'github', link: 'https://github.com/vuejs/vitepress' }
-    ]
-  }
+    locales: {
+        root: {
+            label: 'English',
+            lang: 'en',
+            ...enConfig
+        },
+        fr: {
+            label: 'Simplified Chinese',
+            lang: 'zh-cn',
+            link: '/zh-cn/',
+            ...zhConfig
+        }
+    }
 })
