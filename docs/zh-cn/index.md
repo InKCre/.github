@@ -2,28 +2,28 @@
 layout: home
 
 hero:
-  name: "InKCreThing Document"
+  name: "InKCreThing 文档"
   text: ""
-  tagline: InKCreThing Organization's Knowledge Base
+  tagline: InKCreThing组织的知识库
   actions:
     - theme: brand
-      text: Our Efforts
+      text: 我们的成果
       link: /efforts
     - theme: alt
-      text: Our Mission
+      text: 我们的成果
       link: /about/mission
     - theme: alt
-      text: Join Us
+      text: 加入我们
       link: /about/join
 
 features:
-  - title: InKCreThing Blog
-    details: View our posts to know our activities
+  - title: InKCreThing 博客
+    details: 在博客上关注我们的技术文章与动态
     link: https://inkcre.blog.hadream.ltd
   - title: InKCre
-    details: Help you manage information and knowledge in one station with amazing efficient
+    details: 帮助你实现信息、知识的集中式高效处理
     link: https://docs.inkcre.inkcre-thing.hadream.ltd
-  - title: Feature C
+  - title: 访问我们的GitHub
     details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
 ---
 
