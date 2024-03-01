@@ -90,6 +90,14 @@ export const enConfig: LocaleSpecificConfig<DefaultTheme.Config> = {
             level: "deep", 
             label: "Content", 
         },
+
+        lastUpdated: {
+            text: "Last updated at",
+            formatOptions: {
+                dateStyle: "full",
+                timeStyle: "medium"
+            }
+        },
         
         i18nRouting: true
     }
