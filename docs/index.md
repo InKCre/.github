@@ -2,8 +2,8 @@
 layout: home
 
 hero:
-  name: "InKCreThing Document"
-  text: ""
+  name: "InKCreThing"
+  text: "Info, Knowledge and Creation"
   tagline: InKCreThing's Knowledge Base
   actions:
     - theme: brand
@@ -24,7 +24,7 @@ features:
     details: View our posts to know our activities
     link: https://inkcre.blog.hadream.ltd
   - title: InKCre
-    details: Help you manage information and knowledge in one station with amazing efficient
+    details: Our core product. Help you manage information and knowledge in one station with amazing efficient
     link: https://docs.inkcre.inkcre-thing.hadream.ltd
   - title: GitHub
     details: We follow open source

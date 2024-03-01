@@ -2,7 +2,7 @@ import type { DefaultTheme, LocaleSpecificConfig } from 'vitepress'
 
 export const zhConfig: LocaleSpecificConfig<DefaultTheme.Config> = {
     themeConfig: {
-        siteTitle: "InKCreThing 文档",
+        siteTitle: "翰墨化机团队文档",
         
         // lastUpdated: true,
         lastUpdatedText: '最后更新',
@@ -10,9 +10,6 @@ export const zhConfig: LocaleSpecificConfig<DefaultTheme.Config> = {
         docFooter: {
             prev: '上一篇',
             next: '下一篇'
-        },
-        search: {
-            provider: 'local'
         },
         editLink: {
             pattern: 'https://github.com/InKCre/.github/edit/main/docs/:path',
@@ -22,6 +19,7 @@ export const zhConfig: LocaleSpecificConfig<DefaultTheme.Config> = {
         nav: [
             { text: "主页", link: "/" },
             { text: "成果", link: "/zh-cn/efforts" },
+            { text: "计划", link: "/zh-cn/plans/index" },
             {
                 text: "关于",
                 items: [
@@ -30,13 +28,11 @@ export const zhConfig: LocaleSpecificConfig<DefaultTheme.Config> = {
                         link: "/zh-cn/about/mission",
                         activeMatch: "/zh-cn/about/mission",
                     },
-            
                     {
                         text: "加入我们",
                         link: "/zh-cn/about/join",
                         activeMatch: "/zh-cn/about/join",
                     },
-
                     {
                         text: "我们是谁",
                         link: "/zh-cn/about/who-are-we",
@@ -47,6 +43,38 @@ export const zhConfig: LocaleSpecificConfig<DefaultTheme.Config> = {
         ],
         sidebar: [
             {
+                text: "成果",
+                link: "/zh-cn/efforts",
+                items: [
+                ]
+            },
+            {
+                text: "计划",
+                link: "/zh-cn/plans/index",
+                items: [
+                    { text: "战略", link: '/zh-cn/plans/strategy' },
+                    { text: "启动阶段", link: '/zh-cn/plans/launch-stage/index' }
+                ]
+            },
+            {
+                text: "开发",
+                link: "/zh-cn/development/index",
+                items: [
+                ]
+            },
+            {
+                text: "管理",
+                link: "/zh-cn/management/index",
+                items: [
+                ]
+            },
+            {
+                text: "运营",
+                link: "/zh-cn/operation/index",
+                items: [
+                ]
+            },
+            {
                 text: "关于",
                 items: [
                     { text: "我们的使命", link: '/zh-cn/about/mission' },
@@ -55,12 +83,6 @@ export const zhConfig: LocaleSpecificConfig<DefaultTheme.Config> = {
                     { text: "加入我们", link: '/zh-cn/about/join' }
                 ]
             },
-            {
-                text: "成果",
-                link: "/zh-cn/efforts",
-                items: [
-                ]
-            }
         ],
         outline: {
             level: "deep", 
