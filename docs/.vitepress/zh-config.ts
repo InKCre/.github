@@ -2,7 +2,7 @@ import type { DefaultTheme, LocaleSpecificConfig } from 'vitepress'
 
 export const zhConfig: LocaleSpecificConfig<DefaultTheme.Config> = {
     themeConfig: {
-        siteTitle: "InKCreThing 文档",
+        siteTitle: "翰墨化机团队文档",
         
         // lastUpdated: true,
         lastUpdatedText: '最后更新',
@@ -47,6 +47,12 @@ export const zhConfig: LocaleSpecificConfig<DefaultTheme.Config> = {
         ],
         sidebar: [
             {
+                text: "成果",
+                link: "/zh-cn/efforts",
+                items: [
+                ]
+            },
+            {
                 text: "关于",
                 items: [
                     { text: "我们的使命", link: '/zh-cn/about/mission' },
@@ -55,12 +61,6 @@ export const zhConfig: LocaleSpecificConfig<DefaultTheme.Config> = {
                     { text: "加入我们", link: '/zh-cn/about/join' }
                 ]
             },
-            {
-                text: "成果",
-                link: "/zh-cn/efforts",
-                items: [
-                ]
-            }
         ],
         outline: {
             level: "deep", 

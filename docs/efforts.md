@@ -2,7 +2,7 @@
 
 Here shows the milestones and key events based on [Our Mission](./about/mission.md).
 
-## InKCre Development
+## Development of InKCre
 
 > InKCre is our core product
 
@@ -12,20 +12,33 @@ Here shows the milestones and key events based on [Our Mission](./about/mission.
 |Document|[InKCre Document](https://docs.inkcre.inkcre-thing.hadream.ltd)|
 |Project Management|[InKCre Project - GitHub](https://github.com/InKCre/InKCre/projects)|
 
+You can view our source code and download packages on [GitHub](https://github.com/InKCre/InKCre). \
+We welcome helpful PRs.
+
+If you want a user guide or making contribution to the code. \
+You may read [the product document](https://docs.inkcre.inkcre-thing.hadream.ltd)
+
+
 ### Main Features
+
+> TODO
 
 ### Releases
 
-#### dev-v0.1.0
+*VERSION: dev-v0.1.0*
 
-**Milestone**: [Release: dev-v0.1.0](https://github.com/InKCre/InKCre/milestone/4)
-**Release**: [Not yet]
+**Milestone**: [Release: dev-v0.1.0](https://github.com/InKCre/InKCre/milestone/4) \
+**Release**: [Not yet] \
 **Schedule**: 2024-4-15
-
-## Community
 
 ## Organizing & Management
 
+> TODO
+
 ## Operation
 
-## Ecosystem
+> TODO
+
+### Community
+
+### Ecosystem
