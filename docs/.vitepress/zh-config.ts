@@ -19,6 +19,7 @@ export const zhConfig: LocaleSpecificConfig<DefaultTheme.Config> = {
         nav: [
             { text: "主页", link: "/" },
             { text: "成果", link: "/zh-cn/efforts" },
+            { text: "计划", link: "/zh-cn/plans/index" },
             {
                 text: "关于",
                 items: [
@@ -27,13 +28,11 @@ export const zhConfig: LocaleSpecificConfig<DefaultTheme.Config> = {
                         link: "/zh-cn/about/mission",
                         activeMatch: "/zh-cn/about/mission",
                     },
-            
                     {
                         text: "加入我们",
                         link: "/zh-cn/about/join",
                         activeMatch: "/zh-cn/about/join",
                     },
-
                     {
                         text: "我们是谁",
                         link: "/zh-cn/about/who-are-we",
@@ -46,6 +45,32 @@ export const zhConfig: LocaleSpecificConfig<DefaultTheme.Config> = {
             {
                 text: "成果",
                 link: "/zh-cn/efforts",
+                items: [
+                ]
+            },
+            {
+                text: "计划",
+                link: "/zh-cn/plans/index",
+                items: [
+                    { text: "战略", link: '/zh-cn/plans/strategy' },
+                    { text: "启动阶段", link: '/zh-cn/plans/launch-stage/index' }
+                ]
+            },
+            {
+                text: "开发",
+                link: "/zh-cn/development/index",
+                items: [
+                ]
+            },
+            {
+                text: "管理",
+                link: "/zh-cn/management/index",
+                items: [
+                ]
+            },
+            {
+                text: "运营",
+                link: "/zh-cn/operation/index",
                 items: [
                 ]
             },

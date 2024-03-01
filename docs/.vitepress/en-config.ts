@@ -19,6 +19,7 @@ export const enConfig: LocaleSpecificConfig<DefaultTheme.Config> = {
         nav: [
             { text: "Home", link: "/" },
             { text: "Efforts", link: "/efforts" },
+            { text: "Plans", link: "/plans/index" },
             {
                 text: "About",
                 items: [
@@ -46,6 +47,32 @@ export const enConfig: LocaleSpecificConfig<DefaultTheme.Config> = {
             {
                 text: "Efforts & Results",
                 link: "/efforts",
+                items: [
+                ]
+            },
+            {
+                text: "Plans",
+                link: "/plans/index",
+                items: [
+                    { text: "Strategy", link: '/plans/strategy' },
+                    { text: "The Launch Stage", link: '/plans/launch-stage/index' }
+                ]
+            },
+            {
+                text: "Development",
+                link: "/development/index",
+                items: [
+                ]
+            },
+            {
+                text: "Management",
+                link: "/management/index",
+                items: [
+                ]
+            },
+            {
+                text: "Operation",
+                link: "/operation/index",
                 items: [
                 ]
             },
