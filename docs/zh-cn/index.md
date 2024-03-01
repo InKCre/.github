@@ -3,7 +3,7 @@ layout: home
 
 hero:
   name: "翰墨化机团队"
-  text: "的文档"
+  text: "信息、知识与创造"
   tagline: 翰墨化机团队的知识库
   actions:
       - theme: brand

@@ -2,8 +2,8 @@
 layout: home
 
 hero:
-  name: "InKCreThing Document"
-  text: ""
+  name: "InKCreThing"
+  text: "Info, Knowledge and Creation"
   tagline: InKCreThing's Knowledge Base
   actions:
     - theme: brand
