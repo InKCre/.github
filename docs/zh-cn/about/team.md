@@ -10,8 +10,7 @@ const maintainers = [
       { icon: 'github', link: 'https://github.com/xiaoland' },
       { icon: 'twitter', link: 'https://twitter.com/Lan_zhijiang' }
     ]
-  },
-  ...
+  }
 ]
 </script>
 
