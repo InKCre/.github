@@ -13,7 +13,7 @@ export default defineConfig({
             lang: 'en',
             ...enConfig
         },
-        fr: {
+        "zh-cn": {
             label: 'Simplified Chinese',
             lang: 'zh-cn',
             link: '/zh-cn/',
