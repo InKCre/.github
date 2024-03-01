@@ -88,6 +88,14 @@ export const zhConfig: LocaleSpecificConfig<DefaultTheme.Config> = {
             level: "deep", 
             label: "页面目录", 
         },
+
+        lastUpdated: {
+            text: "最后更新于",
+            formatOptions: {
+                dateStyle: "full",
+                timeStyle: "medium"
+            }
+        },
         
         i18nRouting: true
     }
