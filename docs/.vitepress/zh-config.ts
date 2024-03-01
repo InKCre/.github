@@ -11,9 +11,6 @@ export const zhConfig: LocaleSpecificConfig<DefaultTheme.Config> = {
             prev: '上一篇',
             next: '下一篇'
         },
-        search: {
-            provider: 'local'
-        },
         editLink: {
             pattern: 'https://github.com/InKCre/.github/edit/main/docs/:path',
             text: "在GitHub上编辑该页面"

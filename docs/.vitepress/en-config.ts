@@ -11,9 +11,6 @@ export const enConfig: LocaleSpecificConfig<DefaultTheme.Config> = {
             prev: 'Previous',
             next: 'Next'
         },
-        search: {
-            provider: 'local'
-        },
         editLink: {
             pattern: 'https://github.com/InKCre/.github/edit/main/docs/:path',
             text: "Edit this page on GitHub"

@@ -19,5 +19,13 @@ export default defineConfig({
             link: '/zh-cn/',
             ...zhConfig
         }
-    }
+    },
+
+    themeConfig: {
+        search: {
+            provider: "local",
+        }
+    },
+
+    // ignoreDeadLinks: true
 })
