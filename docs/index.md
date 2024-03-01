@@ -4,7 +4,7 @@ layout: home
 hero:
   name: "InKCreThing Document"
   text: ""
-  tagline: InKCreThing Organization's Knowledge Base
+  tagline: InKCreThing's Knowledge Base
   actions:
     - theme: brand
       text: Our Efforts

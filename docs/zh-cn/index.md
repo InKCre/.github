@@ -4,20 +4,20 @@ layout: home
 hero:
   name: "InKCreThing 文档"
   text: ""
-  tagline: InKCreThing组织的知识库
+  tagline: InKCreThing的知识库
   actions:
       - theme: brand
         text: 我们的成果
-        link: /efforts
+        link: /zh-cn/efforts
       - theme: alt
-        text: 我们的成果
-        link: /about/mission
+        text: 我们的使命
+        link: /zh-cn/about/mission
       - theme: alt
         text: 我们的团队
-        link: /about/team
+        link: /zh-cn/about/team
       - theme: alt
         text: 加入我们
-        link: /about/join
+        link: /zh-cn/about/join
 
 features:
   - title: InKCreThing 博客

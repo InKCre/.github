@@ -26,25 +26,39 @@ export const enConfig: LocaleSpecificConfig<DefaultTheme.Config> = {
                 text: "About",
                 items: [
                     {
-                    text: "Our Mission",
-                    link: "/about/mission",
-                    activeMatch: "/about/mission",
+                        text: "Our Mission",
+                        link: "/about/mission",
+                        activeMatch: "/about/mission",
                     },
             
                     {
-                    text: "Join Us",
-                    link: "/about/join",
-                    activeMatch: "/about/join",
+                        text: "Join Us",
+                        link: "/about/join",
+                        activeMatch: "/about/join",
+                    },
+
+                    {
+                        text: "About Us",
+                        link: "/about/who-are-we",
+                        activeMatch: "/about/who-are-we"
                     },
                 ]
             }
         ],
         sidebar: [
             {
-                text: 'Examples',
+                text: "About",
                 items: [
-                { text: 'Markdown Examples', link: '/markdown-examples' },
-                { text: 'Runtime API Examples', link: '/api-examples' }
+                    { text: "Our Mission", link: '/about/mission' },
+                    { text: "Who Are We", link: '/about/who-are-we' },
+                    { text: "Our Team", link: '/about/team' },
+                    { text: "Join Us", link: '/about/join' }
+                ]
+            },
+            {
+                text: "Efforts & Results",
+                link: "/efforts",
+                items: [
                 ]
             }
         ],
