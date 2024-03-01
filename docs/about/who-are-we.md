@@ -24,4 +24,13 @@ For Chinese name *翰墨化机*:
 
 ### Our Team Members  
 
-See page: [Our Team](./team)  
+See page: [Our Team](./team)
+
+## What will the document contains
+
+This site is InKCreThing's document, which covers organizing, management, operation of the organization.
+
+One of the aims is to let everyone know our organization better, welcome more members, contributors.
+
+At the same time, the document takes the role as organization knowledge base.
+So you can find code of conduct, mission, glossary, etc here.
