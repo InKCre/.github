@@ -4,8 +4,9 @@ Here shows the milestones and key events based on [Our Mission](./about/mission.
 
 ## InKCre Development
 
-> InKCre是我们的核心产品
+> InKCre is our core product
 
+|Type|Link|
 |--|--|
 |Code Repo|[InKCre - GitHub](https://github.com/InKCre/InKCre)|
 |Document|[InKCre Document](https://docs.inkcre.inkcre-thing.hadream.ltd)|

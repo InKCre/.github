@@ -6,7 +6,8 @@
 
 > InKCre是我们的核心产品
 
-|--|--|
+|类型|链接|
+|---|---|
 |代码|[InKCre - GitHub](https://github.com/InKCre/InKCre)|
 |文档|[InKCre Document](https://docs.inkcre.inkcre-thing.hadream.ltd)|
 |项目管理|[InKCre Project - GitHub](https://github.com/InKCre/InKCre/projects)|
