@@ -46,10 +46,25 @@ export const zhConfig: LocaleSpecificConfig<DefaultTheme.Config> = {
             }
         ],
         sidebar: [
+            {
+                text: "关于",
+                items: [
+                    { text: "我们的使命", link: '/zh-cn/about/mission' },
+                    { text: "我们是谁", link: '/zh-cn/about/who-are-we' },
+                    { text: "我们的团队", link: '/zh-cn/about/team' },
+                    { text: "加入我们", link: '/zh-cn/about/join' }
+                ]
+            },
+            {
+                text: "成果",
+                link: "/zh-cn/efforts",
+                items: [
+                ]
+            }
         ],
         outline: {
             level: "deep", 
-            label: "目录", 
+            label: "页面目录", 
         },
         
         i18nRouting: true

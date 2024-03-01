@@ -46,6 +46,21 @@ export const enConfig: LocaleSpecificConfig<DefaultTheme.Config> = {
             }
         ],
         sidebar: [
+            {
+                text: "About",
+                items: [
+                    { text: "Our Mission", link: '/about/mission' },
+                    { text: "Who Are We", link: '/about/who-are-we' },
+                    { text: "Our Team", link: '/about/team' },
+                    { text: "Join Us", link: '/about/join' }
+                ]
+            },
+            {
+                text: "Efforts & Results",
+                link: "/efforts",
+                items: [
+                ]
+            }
         ],
         outline: {
             level: "deep", 
