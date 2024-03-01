@@ -1,6 +1,6 @@
 # 我们的成果  
 
-这里包含了我们在实现[我们的使命](./zh-cn/about/mission.md)路上的里程碑等
+这里包含了我们在实现[我们的使命](./about/mission.md)路上的里程碑等
 
 ## InKCre开发
 

@@ -24,7 +24,7 @@ For Chinese name *翰墨化机*:
 
 ### Our Team Members  
 
-See page: [Our Team](./team)
+See page: [Our Team](./team.md)
 
 ## What will the document contains
 
