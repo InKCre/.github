@@ -1,0 +1,5 @@
+content:
+  - name: "vitepress-docs"
+    label: "InKCreThing Document"
+    type: "collection"
+    path: "docs"
