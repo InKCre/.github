@@ -34,12 +34,12 @@ It's great, but not enough for me.
 2. these sources vary from web pages, video platforms, podcasts, and email(newsletter) to private knowledge communities (DeDao App, WeChat Official Account, WeChat Subscriptions) ... etc.
 3. assist me screen(toss, skim) out valuable information
 4. assist me read them more efficient
-5. saving time, better understanding
-6. taking notes, extracting knowledge
-7. allow me to easily take notes and connect them
-8. to make knowledge grow
+    - saving time, better understanding
+    - taking notes, extracting knowledge
+5. allow me to easily take notes and connect them
+6. as the second brain
 
-**Furthermore**, I hope it can archive these too:
+**Furthermore**, I hope it can achieve these too:
 
 1. store information, and knowledge in one place
 2. search, find them when I need it
