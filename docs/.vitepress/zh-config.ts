@@ -53,7 +53,7 @@ export const zhConfig: LocaleSpecificConfig<DefaultTheme.Config> = {
                 link: "/zh-cn/plans/index",
                 items: [
                     { text: "战略", link: '/zh-cn/plans/strategy' },
-                    { text: "启动阶段", link: '/zh-cn/plans/launch-stage/index' }
+                    { text: "战术", link: '/zh-cn/plans/tactics/index' }
                 ]
             },
             {

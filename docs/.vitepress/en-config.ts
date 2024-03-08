@@ -55,7 +55,7 @@ export const enConfig: LocaleSpecificConfig<DefaultTheme.Config> = {
                 link: "/plans/index",
                 items: [
                     { text: "Strategy", link: '/plans/strategy' },
-                    { text: "The Launch Stage", link: '/plans/launch-stage/index' }
+                    { text: "Tactic", link: '/plans/tactics/index' }
                 ]
             },
             {
