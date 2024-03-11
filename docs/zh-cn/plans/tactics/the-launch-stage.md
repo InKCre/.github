@@ -9,23 +9,23 @@
 这些是阶段的底层OKR，\
 它们的拆分与扩展会在对应的、涉及的横向计划中进行。
 
-### Build the core product into basically usable
+### 开发产品至基本可用
 
 前往 [产品战略](https://docs.inkcre.inkcre-thing.com) 查看
 
-### Build the development's code of conduct (Development)
+### 构建开发行为准则
 
 前往 [开发](../../development/the-launch-stage.md) 查看。
 
-### Build the organization's management mechanism (Management&Organizing)
+### 构建组织的管理机制
 
 前往 [管理](../../management/the-launch-stage.md) 查看。
 
-### Build the operation's mechanism (Operation)
+### 构建运营机制
 
 前往 [运营](../../operation/the-launch-stage.md) 查看。
 
-### Build the operation following the core product's first release
+### 让运营为产品的测试版本发布做准备
 
 前往 [运营](../../operation/the-launch-stage.md) 查看。
 
