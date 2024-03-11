@@ -55,7 +55,7 @@ export const enConfig: LocaleSpecificConfig<DefaultTheme.Config> = {
                 link: "/plans/index",
                 items: [
                     { text: "Strategy", link: '/plans/strategy' },
-                    { text: "The Launch Stage", link: '/plans/launch-stage/index' }
+                    { text: "Tactic", link: '/plans/tactics/index' }
                 ]
             },
             {
@@ -80,6 +80,7 @@ export const enConfig: LocaleSpecificConfig<DefaultTheme.Config> = {
                 text: "About",
                 items: [
                     { text: "Our Mission", link: '/about/mission' },
+                    { text: "Origin", link: '/about/origin' },
                     { text: "Who Are We", link: '/about/who-are-we' },
                     { text: "Our Team", link: '/about/team' },
                     { text: "Join Us", link: '/about/join' }

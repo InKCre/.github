@@ -53,7 +53,7 @@ export const zhConfig: LocaleSpecificConfig<DefaultTheme.Config> = {
                 link: "/zh-cn/plans/index",
                 items: [
                     { text: "战略", link: '/zh-cn/plans/strategy' },
-                    { text: "启动阶段", link: '/zh-cn/plans/launch-stage/index' }
+                    { text: "战术", link: '/zh-cn/plans/tactics/index' }
                 ]
             },
             {
@@ -78,6 +78,7 @@ export const zhConfig: LocaleSpecificConfig<DefaultTheme.Config> = {
                 text: "关于",
                 items: [
                     { text: "我们的使命", link: '/zh-cn/about/mission' },
+                    { text: "起源", link: '/zh-cn/about/origin' },
                     { text: "我们是谁", link: '/zh-cn/about/who-are-we' },
                     { text: "我们的团队", link: '/zh-cn/about/team' },
                     { text: "加入我们", link: '/zh-cn/about/join' }
