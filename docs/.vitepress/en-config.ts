@@ -65,6 +65,9 @@ export const enConfig: LocaleSpecificConfig<DefaultTheme.Config> = {
                     {
                         text: "Devlopment Workflow",
                         link: "/development/workflow",
+                    },
+                        text: "Coding Standard",
+                        link: "/development/coding-standard",
                     }
                 ]
             },
