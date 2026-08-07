@@ -1,4 +1,5 @@
 ## Why
+
 - 在这个时代，信息爆炸式增长
   随着AI的发展，超级个体到来，个人的职责越来越多，需要了解的信息、掌握的知识也越来越多
 - 任何工作都需要信息，有了信息，有了关键的信息，就可以更好更快地完成工作
@@ -17,11 +18,22 @@
   - Access from anywhere, PC, Mobile Phone, Watch, Glasses, and even from BCI.
 
 ## State
+
 - 2025.07.23 Demo focus on life scenarios
 - 2023 Idea
 
+## Contributing
+
+- Read the organization
+  [Git and GitHub governance](https://github.com/InKCre/.github/blob/main/GOVERNANCE.md).
+- Start with the
+  [contribution guide](https://github.com/InKCre/.github/blob/main/CONTRIBUTING.md),
+  then follow the repository-local instructions.
+
 ## Trivias
+
 ### Naming
+
 - English: InKCre
   - *In* stands for Information, *K* stands for Knowledge, *Cre* stands for Creation
   - And sounds like *increase* suggesting the accumulation of knowledge.
