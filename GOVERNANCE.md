@@ -84,6 +84,22 @@ A pull-request workflow must not publish a canonical package or artifact, mutate
 a shared staging or production environment, or receive production authority.
 Fork pull requests receive no preview or production credentials.
 
+### Upstream dependency admission
+
+Some repositories validate a production-admitted artifact owned by another
+repository. Ordinary pull-request checks are candidate feedback; before merge,
+the required checks must be refreshed against the current base and current
+upstream delivery. An open pull request does not need an immediate fan-out rerun
+every time upstream changes because it has no merge authority.
+
+Prefer this final authority-boundary proof over a polling workflow,
+dependency-update pull request, or cross-repository write credential. Upstream
+contracts must still evolve additively: deliver the expanded upstream surface,
+migrate the consumer, then remove the old surface in a later change. A merge
+queue and `merge_group` checks are useful when final synthetic-merge validation
+outweighs the queue's fixed merge method; they are not an organization-wide
+requirement.
+
 ### Protected-main release
 
 Protected `main` is the canonical release authority. A release workflow selects
@@ -101,13 +117,19 @@ release lane, not the pull-request preview exception.
 
 | Repository | Pull-request evidence | Main authority |
 | --- | --- | --- |
-| `core-py` | Hermetic repository, dependency security, portable peer database, and isolated database-branch contracts | Source-verified GHCR publication and Heroku production delivery |
-| `client-web` | Full workspace, dependency security, peer-database browser, and browser-extension contracts; isolated web preview | Focused web release build and production Pages delivery |
+| `core-py` | Hermetic repository, dependency security, portable peer database, and isolated database-branch contracts | Canonical schema-bearing image publication, exact-image Heroku delivery, then `stable` admission |
+| `client-web` | `Workspace contract`, `Dependency review`, `client-web E2E`, and `client-webext E2E`; isolated Pages preview | Focused web release build and same-run production Pages delivery |
 | `ui` | Reproducible workspace and Changesets validation | Changesets release pull request, package publication, tag, and release |
 | `docs` | Website contract | Website release build and production Pages delivery |
 
 Check names and commands remain repository-local implementation truth. The
 profiles standardize authority and evidence semantics, not identical jobs.
+
+For `client-web`, required E2E owns a fresh, data-free PostgreSQL runtime and
+runs the real immutable core service selected through its production-admitted
+`stable` channel. The human Pages preview proves the checked environment-neutral
+web artifact and deterministic preview alias; it does not imply a cloned
+production database or an automatically configured full-stack environment.
 
 `InKCre/.github` is a non-product governance carrier outside the active
 repository enforcement scope. It owns no required check, release workflow, or
