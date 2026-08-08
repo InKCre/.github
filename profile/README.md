@@ -19,6 +19,8 @@
 
 ## State
 
+- 2026.8 Actively developing collection, organization, info-base query, web client for minimum viable prdocut. And improving overall maintainability.
+- 2025.12 Actively developing web client and UI Library
 - 2025.07.23 Demo focus on life scenarios
 - 2023 Idea
 
