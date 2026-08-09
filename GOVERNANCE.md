@@ -115,11 +115,31 @@ release lane, not the pull-request preview exception.
 
 ## Repository profiles
 
+### Check and delivery names
+
+Repository-owned GitHub contexts use a short, lowercase public name:
+
+- `<scope> checks` for an aggregate workspace, static, build, or package contract;
+- `<scope> tests` for a focused automated test suite;
+- `<scope> e2e tests` for an end-to-end runtime test;
+- `<scope> preview` and `<scope> preview cleanup` for pull-request delivery evidence; and
+- `<scope> deployment` for canonical delivery from protected `main`.
+
+The scope is the repository name unless a package or application is independently
+understood inside a monorepo. Reproducibility, hermeticity, portability, and other
+implementation properties belong in step names and repository documentation rather
+than the public context name. Required contexts remain bound to their expected GitHub
+App source.
+
+Repositories adopt this naming convention when their workflow is next changed for a
+substantive reason. A cosmetic rename alone does not justify invalidating an existing
+required context.
+
 | Repository | Pull-request evidence | Main authority |
 | --- | --- | --- |
 | `core-py` | Hermetic repository, dependency security, portable peer database, and isolated database-branch contracts | Canonical schema-bearing image publication, exact-image Heroku delivery, then `stable` admission |
 | `client-web` | `Workspace contract`, `Dependency review`, `client-web E2E`, and `client-webext E2E`; isolated Pages preview | Focused web release build and same-run production Pages delivery |
-| `ui` | Reproducible workspace and Changesets validation | Changesets release pull request, package publication, tag, and release |
+| `ui` | `ui-web checks`; isolated runner-pushed Histoire preview | Changesets package publication and runner-pushed Histoire deployment |
 | `docs` | Website contract | Website release build and production Pages delivery |
 
 Check names and commands remain repository-local implementation truth. The
