@@ -173,10 +173,14 @@ repository's default only when a repository has no local file of the same type.
 - Default workflow-token permission must be read-only; write-capable jobs must
   declare the minimum permissions they need.
 - GitHub Actions must not approve pull-request reviews.
+- Every external fork contributor requires maintainer approval before Actions
+  may start read-only, secret-free CI. Approval grants no preview or production
+  credentials.
 - Third-party Actions must use immutable commit SHAs after the repository's pin
   audit is complete.
-- Production credentials must belong to a production environment restricted to
-  `main`; preview credentials belong only to a preview environment.
+- Jobs that consume production credentials must declare a production
+  environment restricted to `main`. Preview delivery jobs must declare the
+  preview environment, and fork workflows receive neither credential set.
 - Cross-repository write tokens are outside this baseline.
 
 ## Exceptions and break glass
