@@ -17,7 +17,8 @@ The enforcement scope is:
 - `InKCre/core-py` — service;
 - `InKCre/client-web` — application;
 - `InKCre/ui` — package;
-- `InKCre/docs` — documentation site.
+- `InKCre/docs` — documentation site;
+- `InKCre/ext-reg` — public Extension Registry service and catalog.
 
 `InKCre/.github` owns this organization policy and the default contribution
 files. It does not replace product or system truth in `InKCre/docs`.
@@ -141,6 +142,7 @@ required context.
 | `client-web` | `Workspace contract`, `Dependency review`, `client-web E2E`, and `client-webext E2E`; isolated Pages preview | Focused web release build and same-run production Pages delivery |
 | `ui` | `ui-web checks`; isolated runner-pushed Histoire preview | Changesets package publication and runner-pushed Histoire deployment |
 | `docs` | Website contract | Website release build and production Pages delivery |
+| `ext-reg` | `ext-reg checks`; exact-head artifact and trusted-controller static Pages preview for same-repository PRs | Exact-current-main native Registry verification and deployment through the protected production environment |
 
 Check names and commands remain repository-local implementation truth. The
 profiles standardize authority and evidence semantics, not identical jobs.
