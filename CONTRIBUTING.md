@@ -2,6 +2,8 @@
 
 Thank you for contributing. The organization-wide workflow is defined in
 [Git and GitHub Governance](https://github.com/InKCre/.github/blob/main/GOVERNANCE.md).
+Verification and test selection follow the organization-wide
+[Verification and Test Policy](https://github.com/InKCre/.github/blob/main/TESTING.md).
 Repository-local guides own implementation, verification, and release details
 for the code or documentation being changed. They extend the organization
 policy and must not weaken it silently.
