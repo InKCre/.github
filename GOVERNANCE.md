@@ -22,6 +22,8 @@ The enforcement scope is:
 
 `InKCre/.github` owns this organization policy and the default contribution
 files. It does not replace product or system truth in `InKCre/docs`.
+Organization-wide verification and test selection is owned separately by
+[Verification and Test Policy](TESTING.md).
 
 InKCre uses GitHub Free. Common rules are therefore applied to each repository
 instead of through an organization ruleset.
