@@ -4,19 +4,22 @@ This document is the organization-wide authority for choosing verification evide
 repositories. Repository-local guides may identify admitted suites and commands, but must not
 silently weaken this policy.
 
-## Default Evidence Order
+## Choosing Evidence
 
-Use the least complex mechanism that proves the intended invariant:
+Use the least complex mechanism that adequately proves the intended invariant. The options below
+are not a mandatory maturation sequence:
 
-1. language types, schemas, compiler checks, linters, formatters, generated-contract checks, build
-   checks, database constraints, and other static or mechanically enforced facts;
-2. a manually executed black-box journey over the real public boundary;
-3. a repeatable script for a black-box journey that has become useful more than once;
-4. an automated test only after the scripted journey has matured and repeated regressions prove
-   that automation repays its maintenance and implementation-shaping cost.
+- Prefer language types, schemas, compiler checks, linters, formatters, generated-contract checks,
+  build checks, database constraints, and other static enforcement when they fully prove the fact.
+- Use a manual or scripted black-box journey for exploratory, expensive, or deployment-dependent
+  acceptance evidence.
+- Use an automated test for a realistic observable regression, a non-trivial invariant or boundary,
+  or a concrete bug when static evidence is insufficient and automation repays its maintenance and
+  implementation-shaping cost.
 
-New automated tests require explicit maintainer approval. Implementing a feature, fixing a bug, or
-finding a regression does not by itself authorize a new test.
+Implementing a feature or increasing coverage does not by itself justify a new test. Conversely, a
+prior manual script or repeated regression is useful evidence but is not a prerequisite when the
+valuable behavior and the appropriate boundary are already clear.
 
 ## What Not to Automate by Default
 
@@ -35,15 +38,17 @@ product contract. Delete them when stronger static or black-box evidence exists.
 
 ## Admission Criteria for Automation
 
-An automated test is justified only when all of the following are true:
+An automated test is justified when:
 
-- it protects a stable, public, materially valuable invariant;
+- it protects materially valuable observable behavior, a non-trivial invariant or boundary, or a
+  concrete bug;
 - static enforcement cannot prove the invariant;
-- the journey has first been exercised manually or as a script against the real boundary;
-- repeated execution or observed regressions demonstrate positive return on maintenance;
+- it exercises the nearest stable behavior boundary with realistic inputs, transports, and state;
+- concurrency is verified with deterministic coordination or controlled scheduling rather than
+  sleeps when practical;
+- its diagnostic and regression value repays its runtime and maintenance cost;
 - the test does not introduce a second authority for product behavior or fixture-specific output;
-- its owner, runtime cost, failure diagnosis, and removal condition are clear; and
-- explicit maintainer approval has been recorded.
+- its owner, failure diagnosis, and removal condition are clear.
 
 Prefer black-box end-to-end tests. A lower-level automated test needs stronger evidence that the
 public boundary cannot provide useful, reliable, or affordable feedback.
@@ -61,22 +66,22 @@ The following categories may remain when their repository documents the concrete
 - mature browser, extension, packaging, release, or deployment end-to-end journeys.
 
 Category membership is not blanket permission to add another test. New cases still require the
-admission criteria and explicit approval.
+admission criteria.
 
 ## Bug and Security Regressions
 
-A bug should first be fixed at the boundary that allowed it: type model, parser, schema, library
-choice, architecture, observability, runtime contract, or product behavior. Do not automatically add
-a regression test when the defect came from bypassing an existing mechanism or using the wrong
-tool.
+A bug should be fixed at the boundary that allowed it: type model, parser, schema, library choice,
+architecture, observability, runtime contract, or product behavior. A concrete bug can justify a
+regression test when it can be reproduced at a stable behavior boundary. Do not add a redundant test
+when correcting the boundary itself or restoring the intended tool and architecture already proves
+the fix.
 
-Security-sensitive validation follows the same evidence discipline but may justify automation when
-it protects a demonstrated security boundary. Generic hardening, hypothetical attack coverage, or a
-mocked security check is not automatically a test requirement.
+Do not create speculative safety or security regression matrices. Only a confirmed boundary defect
+with a specific actor and attack path enters this policy, and it then uses the same ordinary evidence
+criteria as any other concrete defect.
 
 ## Pull-Request Evidence
 
 Pull requests should state which evidence proves the change and why that evidence level is
-proportionate. When automation is newly proposed, include the prior manual/scripted journey, the
-observed regression or repeated need, the approval, and why static or existing end-to-end evidence
-is insufficient.
+proportionate. When automation is newly proposed, identify the observable behavior or invariant,
+the exercised boundary, and why static or existing end-to-end evidence is insufficient.
