@@ -174,6 +174,16 @@ repository's default only when a repository has no local file of the same type.
 
 ## Actions and credentials
 
+- GitHub Actions owns triggers, permissions, concurrency, environments, job
+  dependencies, platform Actions, and invocation of versioned repository
+  commands. Project checks, builds, release selection, provider reconciliation,
+  polling, and deployment convergence belong in checked-in commands that can be
+  run outside Actions with the same explicit inputs. Keep multiline control flow
+  out of workflow and composite-action YAML; short setup, command invocation,
+  and GitHub input/output translation are acceptable glue.
+- Preserve useful job and step boundaries when extracting logic so failures stay
+  observable. Do not replace inline workflow logic with a custom workflow
+  framework or a repository gate that merely checks YAML shape.
 - Default workflow-token permission must be read-only; write-capable jobs must
   declare the minimum permissions they need.
 - GitHub Actions must not approve pull-request reviews.
