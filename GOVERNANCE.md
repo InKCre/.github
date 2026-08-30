@@ -111,6 +111,10 @@ deploys or publishes the artifact produced by that release run. It records enoug
 source, artifact, run, and deployment identity to diagnose or roll back the
 release.
 
+For repositories that separate feature intent from release preparation, follow
+the optional [Release lifecycle guidance](RELEASING.md). Repository-local
+documentation remains authoritative for exact tools, project mapping, and commands.
+
 Independent builds from the same source are not assumed to be byte-identical.
 Each repository owns dependency and toolchain pinning and must describe artifact
 identity accurately. A persistent shared staging environment belongs to the
