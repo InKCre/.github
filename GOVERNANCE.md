@@ -90,18 +90,19 @@ Fork pull requests receive no preview or production credentials.
 ### Upstream dependency admission
 
 Some repositories validate a production-admitted artifact owned by another
-repository. Ordinary pull-request checks are candidate feedback; before merge,
-the required checks must be refreshed against the current base and current
-upstream delivery. An open pull request does not need an immediate fan-out rerun
-every time upstream changes because it has no merge authority.
+repository. A consumer may intentionally trail an additive upstream release;
+compatibility with its declared contract revision is the authority, not equality
+with the newest moving delivery. Synchronize generated projections when the
+consumer adopts a newer revision, and coordinate every breaking revision by
+delivering the expanded upstream surface, migrating consumers, then removing the
+old surface in a later change.
 
-Prefer this final authority-boundary proof over a polling workflow,
-dependency-update pull request, or cross-repository write credential. Upstream
-contracts must still evolve additively: deliver the expanded upstream surface,
-migrate the consumer, then remove the old surface in a later change. A merge
-queue and `merge_group` checks are useful when final synthetic-merge validation
-outweighs the queue's fixed merge method; they are not an organization-wide
-requirement.
+Prefer an existing behavior or end-to-end check against the admitted upstream
+artifact over a polling workflow, per-pull-request generated-diff gate,
+dependency-update pull request, or cross-repository write credential. A merge
+queue and `merge_group` checks are useful only when final synthetic-merge
+validation outweighs the queue's fixed merge method; they are not an
+organization-wide requirement.
 
 ### Protected-main release
 
@@ -155,9 +156,12 @@ profiles standardize authority and evidence semantics, not identical jobs.
 
 For `client-web`, required E2E owns a fresh, data-free PostgreSQL runtime and
 runs the real immutable core service selected through its production-admitted
-`stable` channel. The human Pages preview proves the checked environment-neutral
-web artifact and deterministic preview alias; it does not imply a cloned
-production database or an automatically configured full-stack environment.
+`stable` channel. This proves current delivery remains compatible without
+requiring every unrelated pull request to regenerate the client's declared
+database projection. The human Pages preview proves the checked
+environment-neutral web artifact and deterministic preview alias; it does not
+imply a cloned production database or an automatically configured full-stack
+environment.
 
 `InKCre/.github` is a non-product governance carrier outside the active
 repository enforcement scope. It owns no required check, release workflow, or
