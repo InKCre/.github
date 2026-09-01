@@ -74,8 +74,11 @@ of the tool or merge method.
 
 ### Pull-request validation
 
-A pull-request workflow validates a candidate change. It may build artifacts for
-evidence and may deliver an isolated preview when all of these controls hold:
+A pull-request validation workflow proves a candidate change but does not
+produce a Pages preview delivery input. A Pages preview workflow may run after
+successful validation, but it must check out the exact pull-request head and
+own its preview build and upload. Preview delivery requires all of these
+controls:
 
 - the pull request comes from the same repository;
 - a trusted controller verifies the workflow, pull request, and exact head SHA;
@@ -149,7 +152,7 @@ required context.
 | `client-web` | `Workspace contract`, `Dependency review`, `client-web E2E`, and `client-webext E2E`; isolated Pages preview | Focused web release build and same-run production Pages delivery |
 | `ui` | `ui-web checks`; isolated runner-pushed Histoire preview | Changesets package publication and runner-pushed Histoire deployment |
 | `docs` | Website contract | Website release build and production Pages delivery |
-| `ext-reg` | `ext-reg checks`; exact-head artifact and trusted-controller static Pages preview for same-repository PRs | Exact-current-main native Registry verification and deployment through the protected production environment |
+| `ext-reg` | `ext-reg checks`; CI-orchestrated trusted-controller static Pages preview built from the exact head for same-repository PRs | Exact-current-main native Registry verification and deployment through the protected production environment |
 
 Check names and commands remain repository-local implementation truth. The
 profiles standardize authority and evidence semantics, not identical jobs.
