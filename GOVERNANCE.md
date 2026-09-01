@@ -201,7 +201,9 @@ repository's default only when a repository has no local file of the same type.
   framework or a repository gate that merely checks YAML shape.
 - Default workflow-token permission must be read-only; write-capable jobs must
   declare the minimum permissions they need.
-- GitHub Actions must not approve pull-request reviews.
+- GitHub Actions must not approve pull-request reviews. GitHub's repository setting combines
+  creation and approval in one capability, so a repository-owned release workflow may enable it
+  to create a pull request only; the workflow must not execute a review approval.
 - Every external fork contributor requires maintainer approval before Actions
   may start read-only, secret-free CI. Approval grants no preview or production
   credentials.
