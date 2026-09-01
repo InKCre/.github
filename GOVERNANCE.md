@@ -74,8 +74,11 @@ of the tool or merge method.
 
 ### Pull-request validation
 
-A pull-request workflow validates a candidate change. It may build artifacts for
-evidence and may deliver an isolated preview when all of these controls hold:
+A pull-request validation workflow proves a candidate change but does not
+produce a Pages preview delivery input. A Pages preview workflow may run after
+successful validation, but it must check out the exact pull-request head and
+own its preview build and upload. Preview delivery requires all of these
+controls:
 
 - the pull request comes from the same repository;
 - a trusted controller verifies the workflow, pull request, and exact head SHA;
@@ -87,21 +90,26 @@ A pull-request workflow must not publish a canonical package or artifact, mutate
 a shared staging or production environment, or receive production authority.
 Fork pull requests receive no preview or production credentials.
 
+Pull-request CI may upload failure-only diagnostics needed to investigate a
+failed run. Successful build outputs must not become preview or release inputs,
+and must not be retained without an identified diagnostic consumer.
+
 ### Upstream dependency admission
 
 Some repositories validate a production-admitted artifact owned by another
-repository. Ordinary pull-request checks are candidate feedback; before merge,
-the required checks must be refreshed against the current base and current
-upstream delivery. An open pull request does not need an immediate fan-out rerun
-every time upstream changes because it has no merge authority.
+repository. A consumer may intentionally trail an additive upstream release;
+compatibility with its declared contract revision is the authority, not equality
+with the newest moving delivery. Synchronize generated projections when the
+consumer adopts a newer revision, and coordinate every breaking revision by
+delivering the expanded upstream surface, migrating consumers, then removing the
+old surface in a later change.
 
-Prefer this final authority-boundary proof over a polling workflow,
-dependency-update pull request, or cross-repository write credential. Upstream
-contracts must still evolve additively: deliver the expanded upstream surface,
-migrate the consumer, then remove the old surface in a later change. A merge
-queue and `merge_group` checks are useful when final synthetic-merge validation
-outweighs the queue's fixed merge method; they are not an organization-wide
-requirement.
+Prefer an existing behavior or end-to-end check against the admitted upstream
+artifact over a polling workflow, per-pull-request generated-diff gate,
+dependency-update pull request, or cross-repository write credential. A merge
+queue and `merge_group` checks are useful only when final synthetic-merge
+validation outweighs the queue's fixed merge method; they are not an
+organization-wide requirement.
 
 ### Protected-main release
 
@@ -148,16 +156,19 @@ required context.
 | `client-web` | `Workspace contract`, `Dependency review`, `client-web E2E`, and `client-webext E2E`; isolated Pages preview | Focused web release build and same-run production Pages delivery |
 | `ui` | `ui-web checks`; isolated runner-pushed Histoire preview | Changesets package publication and runner-pushed Histoire deployment |
 | `docs` | Website contract | Website release build and production Pages delivery |
-| `ext-reg` | `ext-reg checks`; exact-head artifact and trusted-controller static Pages preview for same-repository PRs | Exact-current-main native Registry verification and deployment through the protected production environment |
+| `ext-reg` | `ext-reg checks`; CI-orchestrated trusted-controller static Pages preview built from the exact head for same-repository PRs | Exact-current-main native Registry verification and deployment through the protected production environment |
 
 Check names and commands remain repository-local implementation truth. The
 profiles standardize authority and evidence semantics, not identical jobs.
 
 For `client-web`, required E2E owns a fresh, data-free PostgreSQL runtime and
 runs the real immutable core service selected through its production-admitted
-`stable` channel. The human Pages preview proves the checked environment-neutral
-web artifact and deterministic preview alias; it does not imply a cloned
-production database or an automatically configured full-stack environment.
+`stable` channel. This proves current delivery remains compatible without
+requiring every unrelated pull request to regenerate the client's declared
+database projection. The human Pages preview proves the checked
+environment-neutral web artifact and deterministic preview alias; it does not
+imply a cloned production database or an automatically configured full-stack
+environment.
 
 `InKCre/.github` is a non-product governance carrier outside the active
 repository enforcement scope. It owns no required check, release workflow, or
