@@ -90,6 +90,10 @@ A pull-request workflow must not publish a canonical package or artifact, mutate
 a shared staging or production environment, or receive production authority.
 Fork pull requests receive no preview or production credentials.
 
+Pull-request CI may upload failure-only diagnostics needed to investigate a
+failed run. Successful build outputs must not become preview or release inputs,
+and must not be retained without an identified diagnostic consumer.
+
 ### Upstream dependency admission
 
 Some repositories validate a production-admitted artifact owned by another
