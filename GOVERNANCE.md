@@ -119,6 +119,11 @@ deploys or publishes the artifact produced by that release run. It records enoug
 source, artifact, run, and deployment identity to diagnose or roll back the
 release.
 
+When `main` requires strict latest-base pull-request checks and has no bypass,
+do not rerun the same validation on a `main` push. Main-push workflows invoke
+release, deployment, and release-reconciliation owners directly; those owners
+still verify and build the exact current-main source they deliver.
+
 For repositories that separate feature intent from release preparation, follow
 the optional [Release lifecycle guidance](RELEASING.md). Repository-local
 documentation remains authoritative for exact tools, project mapping, and commands.
