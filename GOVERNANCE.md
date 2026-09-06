@@ -75,7 +75,7 @@ of the tool or merge method.
 ### Pull-request validation
 
 A pull-request validation workflow proves a candidate change but does not
-produce a Pages preview delivery input. A Pages preview workflow may run after
+produce a preview delivery input. A preview workflow may run after
 successful validation, but it must check out the exact pull-request head and
 own its preview build and upload. Preview delivery requires all of these
 controls:
@@ -161,7 +161,12 @@ required context.
 | `client-web` | `Workspace contract`, `Dependency review`, `client-web E2E`, and `client-webext E2E`; isolated Pages preview | Focused web release build and same-run production Pages delivery |
 | `ui` | `ui-web checks`; isolated runner-pushed Histoire preview | Changesets package publication and runner-pushed Histoire deployment |
 | `docs` | Website contract | Website release build and production Pages delivery |
-| `ext-reg` | `ext-reg checks`; CI-orchestrated trusted-controller static Pages preview built from the exact head for same-repository PRs | Exact-current-main native Registry verification and deployment through the protected production environment |
+| `ext-reg` | `ext-reg checks`; CI-orchestrated trusted-controller Python Worker preview built from the exact head, with per-PR D1/R2 for same-repository PRs | Exact-current-main native Registry verification and deployment through the protected production environment |
+
+For `ext-reg`, the preview workflow owns its build and transfers only built
+Python modules and SQL to a separate trusted delivery runner. The controller
+owns resource bindings and credentials; the candidate Worker receives only its
+own D1/R2. Closing the PR retires the Worker and deletes those resources.
 
 Check names and commands remain repository-local implementation truth. The
 profiles standardize authority and evidence semantics, not identical jobs.
