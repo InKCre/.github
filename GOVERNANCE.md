@@ -161,12 +161,12 @@ required context.
 | `client-web` | `Workspace contract`, `Dependency review`, `client-web E2E`, and `client-webext E2E`; isolated Pages preview | Focused web release build and same-run production Pages delivery |
 | `ui` | `ui-web checks`; isolated runner-pushed Histoire preview | Changesets package publication and runner-pushed Histoire deployment |
 | `docs` | Website contract | Website release build and production Pages delivery |
-| `ext-reg` | `ext-reg checks`; CI-orchestrated trusted-controller Python Worker preview built from the exact head, with per-PR D1/R2 for same-repository PRs | Exact-current-main native Registry verification and deployment through the protected production environment |
+| `ext-reg` | `ext-reg checks`; CI-orchestrated trusted-controller CPython image preview built from the exact head, with per-PR Neon branches and R2 buckets for same-repository PRs | Exact-current-main native Registry verification and deployment through the protected production environment |
 
 For `ext-reg`, the preview workflow owns its build and transfers only built
-Python modules and SQL to a separate trusted delivery runner. The controller
-owns resource bindings and credentials; the candidate Worker receives only its
-own D1/R2. Closing the PR retires the Worker and deletes those resources.
+OCI images to a separate trusted delivery runner. The controller owns provider
+credentials; the candidate service receives only its own PostgreSQL branch and
+R2 bucket credentials. Closing the PR retires its app and deletes those resources.
 
 Check names and commands remain repository-local implementation truth. The
 profiles standardize authority and evidence semantics, not identical jobs.
