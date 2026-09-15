@@ -1,104 +1,160 @@
 # InKCre
 
-InKCre is an open-source, self-hostable system for collecting information from external systems, organizing it into a durable graph-based info-base, and making it available for later retrieval and use.
+**Information → Knowledge → Creation**
 
-The goal is simple: information that has already been encountered should remain useful in future work, instead of being trapped in source-specific flows or repeatedly rediscovered.
+InKCre is an open-source, self-hostable system for **collecting, organizing, and reusing information—for people and agents**.
+
+It brings information from different sources into one durable, graph-based **info-base**, keeping content connected to its context and provenance. The goal is to make information you have already encountered useful in future work, leaving more attention for understanding, judgment, and creation.
 
 [Website](https://inkcre.dev) · [Developer Guide](https://inkcre.dev/developer/) · [Architecture](https://inkcre.dev/developer/architecture) · [Core](https://github.com/InKCre/core-py)
 
-## Usable information
+## Why InKCre
 
-Information arrives from many places: messages, feeds, documents, bookmarks, applications, and the surrounding context of our work.
+Information is scattered across messages, feeds, documents, bookmarks, applications, and the surrounding context of everyday work.
 
-Capturing it is only the beginning.
+Capturing it is only the first step. The harder problem is making that information remain useful after its original context has passed: finding it again, recovering the relationships around it, understanding where it came from, and letting it participate in later work.
 
-InKCre aims to serve collected information improving your productivity:
+InKCre is built around that problem.
 
-```
+```text
 external systems
       │
    Sources
       │
       ▼
-┌───────────────────────┐
-│       info-base       │
-│                       │
-│  Blocks ─ Relations   │
-└───────────┬───────────┘
-            │
-    ┌───────┼───────────────┐
-    │       │               │
- Resolvers  │          Organization
- + Storage  │          behaviors
-            │               │
-            ▼               └──────↺
-   lexical / semantic /
-     graph retrieval
-            │
-      ┌─────┴─────┐
-      ▼           ▼
-   clients      Sinks
-
+┌──────────────────────────┐
+│        info-base         │
+│                          │
+│   Blocks ─ Relations     │
+└────────────┬─────────────┘
+             │
+      ┌──────┼───────────────┐
+      │      │               │
+  Resolvers  │          Organization
+  + Storage  │           behaviors
+      │      │               │
+      │      ▼               └──────↺
+      │ lexical / semantic /
+      │   graph retrieval
+      │      │
+      └──────┼───────────────┐
+             ▼               ▼
+          clients          Sinks
+                              │
+                              ▼
+                           agents
 ```
 
-A Block is one persisted information unit. A Relation is a directed semantic connection between Blocks. Together they form the authoritative graph of the info-base.
+A **Block** is one persisted information unit. A **Relation** is a directed semantic connection between Blocks. Together, they form the authoritative graph of the info-base.
 
-Around that graph:
+The surrounding capabilities stay intentionally separate:
 
-* Sources collect information from external systems.
-* Resolvers interpret stored content and its local graph context.
-* Storage retrieves the actual bytes behind externally stored content.
-* Organization improves information already in the info-base for later use.
-* Retrieval and Sinks expose that information to people, applications, and agents.
+- **Sources** collect information from external systems or compatible clients.
+- **Resolvers** interpret stored content together with its local graph context.
+- **Storage** retrieves the actual bytes behind externally stored content.
+- **Organization** improves information already in the info-base for later use.
+- **Retrieval** exposes lexical, semantic, and graph-navigation ways to recover context.
+- **Sinks** project info-base capabilities into downstream applications and agents.
 
-These responsibilities stay separate even when one runtime implements several of them.
+## Information that survives its source
 
-### Design principles
+InKCre does not treat collected information as output that belongs permanently to the system where it was first encountered.
 
-### Collection, organization, and use are independent actions
+For example, an email can enter the info-base as several connected pieces: the message, mailbox occurrence, participants, body content, attachments, and relationships to other messages. These pieces remain independently addressable and reusable after collection. A future task can retrieve the body, follow a relationship, inspect an attachment, or combine the message with information collected somewhere else.
 
-InKCre does not require information to pass through a fixed ingestion → processing → retrieval pipeline.
+This is why collection, organization, and use are independent actions rather than mandatory stages in a fixed ingestion pipeline.
 
-A Source may persist a useful graph directly. Information can be used immediately, or later reconsidered by Organization when doing so improves future use.
+Information may be useful immediately after collection. It may also become more useful later, after new information arrives or an Agent explicitly reorganizes it.
 
-Reads do not silently rewrite the info-base.
+## Preserve provenance, not just content
 
-### Preserve provenance and meaning
+Information becomes less trustworthy when its origin, evidence, and transformations are flattened away.
 
-Collected information should retain the meaning and evidence provided by its source without turning InKCre into a mirror of every external system.
+InKCre keeps source-authored facts, raw content, Resolver-derived meaning, and model-authored interpretation distinguishable. Relations can express where derived information came from and how it changed.
 
-Source-authored facts, raw content, Resolver-derived meaning, and model-authored interpretation remain distinguishable so downstream consumers can reason about where information came from and how it was produced.
+For example, an Agent-created synthesis can remain linked to every source Block that materially contributed to it. A later revision can remain connected to the previous synthesis instead of silently replacing its history.
 
-### Multiple ways to recover context
+The goal is to let downstream consumers reason about **what an information unit means, where it came from, and how it was produced**.
 
-Different questions require different evidence.
+## Multiple ways to recover context
 
-InKCre keeps lexical feature retrieval, semantic retrieval, and graph navigation as distinct capabilities rather than hiding them behind one opaque search abstraction.
+Different tasks need different evidence, so InKCre does not hide retrieval behind one universal search abstraction.
 
-A caller can recover an entity from a remembered phrase, search by meaning, or navigate relationships already expressed in the graph.
+- **Lexical retrieval** recovers a Block from exact clues such as a phrase, identifier, filename, transcript, OCR fragment, metadata field, or description.
+- **Semantic retrieval** ranks existing Blocks and Relations by meaning.
+- **Graph navigation** follows relationships already expressed in the info-base, including bounded neighborhoods and paths.
 
-### Agents can use and improve the info-base
+These primitives can be composed by applications or Agents according to the task.
 
-InKCre exposes an MCP Sink for external agents to recall information, read Blocks, expand graph context, find paths, and invoke typed Resolver capabilities.
+## Agents can use the info-base
 
-The downstream Agent owns its task reasoning and answer generation; the info-base remains the information authority.
+InKCre exposes an MCP Sink that lets an external Agent recall information, read Blocks, expand graph context, find paths, discover Resolver capabilities, and invoke typed Resolver methods.
 
-Agents can also participate in Organization. Core currently models semantic behaviors such as rumination, refinement, synthesis, supersession, evidence stance, referent anchoring, and provenance-aware duplicate assertion as explicit graph operations with bounded mutation contracts.
+The Agent remains responsible for its task reasoning and final output. InKCre acts as an evidence environment: it supplies reusable information and provenance without pretending that retrieved evidence is already an answer.
 
-## Architecture
+This also changes when retrieval can happen. An Agent may consider information collected earlier whenever it can improve the current productive or creative task—even when the person did not explicitly ask to search—while avoiding reflexive retrieval when stored information is unlikely to help.
 
-InKCre is a multi-repository system built around one shared info-base.
+## Agents can improve the info-base
 
-core-py, client-web, and future runtimes participate as peers rather than being forced into a permanent frontend/backend hierarchy. PostgreSQL owns shared persisted state, while admitted database, HTTP, and extension contracts define how runtimes participate.
+Agents can also participate in Organization: explicit actions over existing information whose purpose is to improve later use.
 
-The project is under active development. Product behavior and developer contracts continue to evolve as real integrations clarify which boundaries should become durable.
+Current organization behaviors include:
 
-For the canonical architecture and product vocabulary, see the Developer Guide and Architecture.
+- **rumination** — reconsider one information unit and its direct context;
+- **refinement** — add information that makes an existing idea more precise without replacing it;
+- **synthesis** — create reusable information from multiple sources while preserving exact source basis;
+- **supersession** — express that newer information replaces older information within a compatible scope;
+- **evidence stance** — preserve support, contradiction, or other attributable evidence relationships;
+- **referent anchoring** — connect a mention to an existing entity when justified;
+- **duplicate assertion** — record provenance-aware duplication without destructively collapsing information.
+
+These behaviors are implemented as bounded graph operations. The Agent makes semantic judgments using retrieval, Resolver capabilities, and graph navigation; behavior-specific commands validate structural invariants before changing the authoritative graph.
+
+Organization is additive and explicit. Collection does not automatically force information through an AI-processing pipeline, and retrieval does not implicitly trigger Organization.
+
+<details>
+<summary><strong>Engineering boundaries</strong></summary>
+
+### Authoritative graph, derived support
+
+Blocks and Relations are authoritative information state. Embeddings and lexical retrieval records are derived support that can be rebuilt.
+
+Retrieval reads only usable derived records; it does not silently maintain stale indexes while serving a query.
+
+### Interpretation and bytes are different responsibilities
+
+A Resolver interprets a Block's hydrated content and local graph context. Storage only turns an opaque pointer into bytes and, when writable, owns that byte lifecycle.
+
+This separation lets externally stored content remain part of the same information model without making storage backends responsible for meaning.
+
+Some Resolver reads may explicitly materialize a missing derivation when their own contract permits it. That behavior remains owned by the Resolver; it is not a hidden retrieval or Organization side effect.
+
+### Persisted information outlives runtime enablement
+
+Extensions can add Sources, Resolvers, Storage handlers, Sinks, and bounded protocol behavior. Runtime enablement and persisted readability are intentionally different lifetimes: an installed decoder can continue to interpret its persisted Blocks even when the Extension's active Source or API surface is disabled.
+
+### Peers around shared authority
+
+`core-py`, `client-web`, and future runtimes participate as peers around a shared info-base rather than being forced into a permanent frontend/backend hierarchy.
+
+PostgreSQL owns shared persisted state. Individual peers can have different runtime capabilities, and exact capability contracts allow work to be routed without transferring information authority.
+
+</details>
+
+## Project structure
+
+InKCre is a multi-repository project under active development.
+
+- [`InKCre/core-py`](https://github.com/InKCre/core-py) — Python runtime and reference implementation for the info-base, Sources, Resolvers, Storage, retrieval, Organization, Agent runtime, MCP Sink, and first-party Extensions.
+- [`InKCre/docs`](https://github.com/InKCre/docs) — canonical shared product intent, vocabulary, cross-unit contracts, and the public documentation website.
+- [`inkcre.dev`](https://inkcre.dev) — project website and developer documentation.
+
+The system is designed to be self-hostable and extensible. Product behavior and developer contracts continue to evolve as implementation and real integrations clarify which boundaries should become durable.
 
 ## Why “InKCre”?
 
-Information → Knowledge → Creation -> In, K, Cre
+**Information → Knowledge → Creation** gives the project its name: **In · K · Cre**.
 
-InKCre is also known in Chinese as 第三持存 — tertiary retention.
+InKCre is also known in Chinese as **第三持存** — *tertiary retention*.
 
-The project exists to make accumulated information available when it becomes useful again, while leaving more human attention for understanding, judgment, and creation.
+The project exists to make accumulated information available when it becomes useful again, so people and Agents can spend less effort rediscovering context and more effort understanding, deciding, and creating.
