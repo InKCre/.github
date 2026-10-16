@@ -14,10 +14,12 @@ enforcement is never permission to bypass the policy.
 
 The enforcement scope is:
 
-- `InKCre/core-py` — service;
-- `InKCre/client-web` — application;
-- `InKCre/ui` — package;
-- `InKCre/docs` — documentation site;
+- `InKCre/impl-py` — Python implementation (peer, schema/migrations authority, `inkcre-cli`, first-party Python extensions);
+- `InKCre/impl-ts` — TypeScript implementation (web peer, browser-extension peer, first-party TypeScript extensions);
+- `InKCre/impl-swift` — Swift implementation (Apple platforms);
+- `InKCre/impl-kotlin` — Kotlin implementation (Android);
+- `InKCre/ui` — design system and UI package;
+- `InKCre/docs` — shared product Hub and documentation site;
 - `InKCre/ext-reg` — public Extension Registry service and catalog.
 
 `InKCre/.github` owns this organization policy and the default contribution
@@ -157,8 +159,8 @@ required context.
 
 | Repository | Pull-request evidence | Main authority |
 | --- | --- | --- |
-| `core-py` | Hermetic repository, dependency security, portable peer database, and isolated database-branch contracts | Canonical schema-bearing image publication, exact-image Heroku delivery, then `stable` admission |
-| `client-web` | `Workspace contract`, `Dependency review`, `client-web E2E`, and `client-webext E2E`; isolated Pages preview | Focused web release build and same-run production Pages delivery |
+| `impl-py` | Hermetic repository, dependency security, portable peer database, and isolated database-branch contracts | Canonical schema-bearing image publication, exact-image Heroku delivery, then `stable` admission |
+| `impl-ts` | `Workspace contract`, `Dependency review`, `client-web E2E`, and `client-webext E2E`; isolated Pages preview | Focused web release build and same-run production Pages delivery |
 | `ui` | `ui-web checks`; isolated runner-pushed Histoire preview | Changesets package publication and runner-pushed Histoire deployment |
 | `docs` | Website contract | Website release build and production Pages delivery |
 | `ext-reg` | `ext-reg checks`; CI-orchestrated trusted-controller CPython image preview built from the exact head, with per-PR Neon branches and R2 buckets for same-repository PRs | Exact-current-main native Registry verification and deployment through the protected production environment |
@@ -171,7 +173,7 @@ R2 bucket credentials. Closing the PR retires its app and deletes those resource
 Check names and commands remain repository-local implementation truth. The
 profiles standardize authority and evidence semantics, not identical jobs.
 
-For `client-web`, required E2E owns a fresh, data-free PostgreSQL runtime and
+For `impl-ts`, required E2E owns a fresh, data-free PostgreSQL runtime and
 runs the real immutable core service selected through its production-admitted
 `stable` channel. This proves current delivery remains compatible without
 requiring every unrelated pull request to regenerate the client's declared
