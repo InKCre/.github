@@ -1,42 +1,28 @@
-## Why
+# InKCre
 
-- 在这个时代，信息爆炸式增长
-  随着AI的发展，超级个体到来，个人的职责越来越多，需要了解的信息、掌握的知识也越来越多
-- 任何工作都需要信息，有了信息，有了关键的信息，就可以更好更快地完成工作
-- 人的大脑是为洞察、创造设计的，记忆零碎的信息、不常用的信息会占用创造、思考的资源
-  常用的信息自然会内化为知识，总结出洞见；但这不意味不常用的信息不重要，因为环境会变化
+**Collect information from the tools you use, organize it into a personal knowledge base, and put it to work.**
+
+InKCre is a peer-based system where your devices and apps contribute to one shared info-base — no central server owns your data.
 
 ## Highlight
 
-- Automatically collect and organize any data from any sources
-- Build up the information base with blocks and relations
+- Automatically collect and organize data from any source
+- Build up the info-base with **blocks and relations**
   - Blocks are the unit of information, replacing pages
   - Relations are dynamic attributes of blocks, making them capable of representing anything in the world
-- Serve for your creation.
-  - Integrate with your productivity software. Includes browser, Word, Mailbox, IDE, Terminal ...
-  - Provide essential information that helps your work before you ask
-  - Access from anywhere, PC, Mobile Phone, Watch, Glasses, and even from BCI.
-
-## State
-
-- 2026.8 Actively developing collection, organization, info-base query, web client for minimum viable prdocut. And improving overall maintainability.
-- 2025.12 Actively developing web client and UI Library
-- 2025.07.23 Demo focus on life scenarios
-- 2023 Idea
+- Serve for your creation
+  - Integrate with your productivity software — browser, Word, mailbox, IDE, terminal
+  - Surface the information that helps your work before you ask
+  - Access from anywhere — PC, mobile, watch, glasses, and even BCI
 
 ## Contributing
 
-- Read the organization
-  [Git and GitHub governance](https://github.com/InKCre/.github/blob/main/GOVERNANCE.md).
-- Start with the
-  [contribution guide](https://github.com/InKCre/.github/blob/main/CONTRIBUTING.md),
-  then follow the repository-local instructions.
+- Read the organization [Git and GitHub governance](https://github.com/InKCre/.github/blob/main/GOVERNANCE.md)
+- Start with the [contribution guide](https://github.com/InKCre/.github/blob/main/CONTRIBUTING.md), then follow the repository-local instructions
 
 ## Trivias
 
 ### Naming
 
-- English: InKCre
-  - *In* stands for Information, *K* stands for Knowledge, *Cre* stands for Creation
-  - And sounds like *increase* suggesting the accumulation of knowledge.
-- Chinese: 第三持存
+- English: **InKCre** — *In*formation + *K*nowledge + *Cre*ation, and sounds like *increase*, suggesting the accumulation of knowledge
+- Chinese: **第三持存**
