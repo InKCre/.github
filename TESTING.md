@@ -4,6 +4,14 @@ This document is the organization-wide authority for choosing verification evide
 repositories. Repository-local guides may identify admitted suites and commands, but must not
 silently weaken this policy.
 
+## 格式与静态检查
+
+每个仓库的本地检查入口与 CI 必须使用同一份配置和锁定的工具版本，覆盖正式维护的源码、测试与工具脚本。已经采用的类型感知 lint 应进入默认检查入口；仅提供一个需要开发者额外记住的命令，不能算持续执行。检查必须只读，发现违规时以非零状态退出；自动修复使用单独入口。
+
+检查范围由仓库配置明确拥有。构建产物、测试报告、外部维护的技能和共享文档挂载不按消费者仓库的格式重写；任务目录内的临时实验不进入产品质量门禁。实验成为正式验证或交付步骤时，必须迁入受检查的维护目录。生成代码的例外应限定到具体产物和不适用的规则，并保留其生成一致性、编译或类型验证。不要用忽略整个源码目录、关闭有效规则或添加历史问题基线来取得通过。
+
+遇到“既有问题”，先记录命令、工具版本、具体路径和失败原因，核对同一工具与配置下的已提交基线。分别说明源码缺陷、检查范围错误和环境阻塞；不得把未执行、跳过或失败写成通过。修复检查入口后，使用一次受控违规验证它确实失败，再运行正常检查；不为检查配置复制一套长期测试框架。阻塞暂时无法修复时，报告实际剩余问题和负责的仓库，而不是长期沿用笼统豁免。
+
 ## Choosing Evidence
 
 Use the least complex mechanism that adequately proves the intended invariant. The options below
