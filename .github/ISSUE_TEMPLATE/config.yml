@@ -1,0 +1,11 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Usage, deployment, and extension development questions
+    url: https://github.com/orgs/InKCre/discussions/categories/q-a
+    about: Ask a question or get help finding the responsible repository.
+  - name: Ideas and direction
+    url: https://github.com/orgs/InKCre/discussions/categories/ideas
+    about: Discuss suggestions that do not yet have a defined task scope.
+  - name: Report a security vulnerability privately
+    url: https://github.com/InKCre/impl-py/security/policy
+    about: Find the private reporting channel. Do not disclose vulnerabilities or credentials in public issues.

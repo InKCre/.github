@@ -1,0 +1,30 @@
+name: Report a bug
+description: Describe the operation, expected behavior, and actual result.
+labels: [bug]
+body:
+  - type: textarea
+    id: behavior
+    attributes:
+      label: What happened?
+      description: Describe what you were trying to do, what you expected, and what actually happened.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: How can we reproduce it?
+      description: Provide the shortest steps or a public minimal example. If it is intermittent, describe the conditions you observed.
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Versions and environment
+      description: Include the client or peer, extension versions, deployment method, operating system, and browser as relevant. Say when a version is unknown.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Logs or screenshots
+      description: Optional. Remove tokens, JWT secrets, connection files, and personal data. Use private reporting for vulnerability details.

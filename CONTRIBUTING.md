@@ -8,6 +8,8 @@ Repository-local guides own implementation, verification, and release details
 for the code or documentation being changed. They extend the organization
 policy and must not weaken it silently.
 
+See [Get involved](SUPPORT.md) for questions, bug reports, contribution opportunities, and sharing your work.
+
 ## Workflow
 
 1. Choose an issue whose owner, outcome, and verification boundary are clear. If no suitable
@@ -60,3 +62,15 @@ required.
 Canonical publication and production delivery happen only from protected
 `main`. Pull requests may receive an isolated preview but must not receive
 production credentials or publish a canonical release.
+
+## Triage and pull-request handoff
+
+Maintainers first confirm the problem and responsible repository, then record the next action. Apply `needs-info` with a specific request for missing observations. Apply `blocked` with a link to the dependency and the condition that clears it. Use `area/*` for implementation areas, and `bug`, `enhancement`, or `documentation` for work types. Use GitHub's native open/closed, draft, and reviewer state.
+
+`help wanted` identifies work with a defined scope and acceptance criteria that welcomes external contributions. Add `good first issue` only when it also has a code or documentation starting point, needs no organization-private credentials, and names a contact willing to help. The contact and implementation assignee may differ: name the contact in the issue, then assign implementation after a contributor confirms they are taking it. Create opportunities from real work rather than placeholder tasks.
+
+When marking a PR ready, the author states the feedback needed, outstanding acceptance or delivery work, and the person or team responsible for responding next. A maintainer who accepts the handoff sets the assignee and requests a capable reviewer other than the author when available. With one available maintainer, record the manual review and acceptance conclusion publicly. Existing Governance still owns branch protection; this workflow adds neither self-approval nor an implicit approval requirement.
+
+For cross-repository work, one tracking issue links the PRs and records version, acceptance, and publication dependencies. Each PR retains its own scope and evidence. Small fixes can go directly to a PR. After merging, retain outstanding publication, consumer migration, or acceptance work in the tracking issue until the promised delivery is complete.
+
+The [current collaboration board](https://github.com/orgs/InKCre/projects/12) shows work admitted for coordination. **Triage** needs scope or ownership confirmation; **Ready to pick up** meets the handoff conditions; **In progress** is being implemented; **Review / acceptance** awaits feedback, behavior evidence, merging, or a publication decision; **Done** means the task's promised delivery is complete. Update related items when handling issues, PRs, and releases. Passing CI alone does not complete delivery, and age alone does not close an issue. Historical boards retain their records and point to the current entry. Maintainers respond as availability allows; the project does not promise a fixed response time.
