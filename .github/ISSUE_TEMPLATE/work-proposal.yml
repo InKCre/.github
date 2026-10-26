@@ -1,0 +1,23 @@
+name: Propose a task
+description: Propose a feature, improvement, or documentation task with an observable outcome.
+type: Task
+body:
+  - type: textarea
+    id: outcome
+    attributes:
+      label: What problem should this solve?
+      description: Who encounters the problem, under what conditions, and what should they be able to do afterward?
+    validations:
+      required: true
+  - type: textarea
+    id: scope
+    attributes:
+      label: Known scope and related material
+      description: Link relevant pages, repositories, extensions, existing behavior, or discussions. Include what is still uncertain.
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: How would we know it is done?
+      description: Describe observable results, examples, or acceptance checks. An implementation design is not required.
+    validations:
+      required: true

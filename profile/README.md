@@ -6,6 +6,8 @@ InKCre is an open-source, self-hostable system for **collecting, organizing, and
 
 [Website](https://inkcre.dev) · [Developer Guide](https://inkcre.dev/developer/) · [Architecture](https://inkcre.dev/developer/architecture)
 
+[Discussions](https://github.com/orgs/InKCre/discussions) · [Get involved](https://github.com/InKCre/.github/blob/main/SUPPORT.md) · [Current work](https://github.com/orgs/InKCre/projects/12)
+
 ## The idea
 
 Information is scattered across messages, feeds, documents, and apps. Capturing it is only the first step — the harder problem is making it remain useful after its original context has passed.
@@ -47,6 +49,6 @@ InKCre is a multi-repository project under active development.
 
 ## Why "InKCre"?
 
-**In · K · Cre** = **In**formation → **K**nowledge → **Cre**ation, and sounds like *increase*.
+**In · K · Cre** = **In**formation → **K**nowledge → **Cre**ation, and sounds like _increase_.
 
-Also known in Chinese as **第三持存** — *tertiary retention*.
+Also known in Chinese as **第三持存** — _tertiary retention_.

@@ -10,6 +10,20 @@ https://github.com/InKCre/.github/blob/main/CONTRIBUTING.md
 
 Related issue or task:
 
+<!-- Use type(scope): summary for the PR title; the repository guide owns stable scopes. -->
+
+Primary implementation scope:
+
+Affected release projects (or `none`):
+
+## Next action
+
+Feedback or acceptance needed:
+
+Person or team responding next:
+
+Outstanding delivery and blockers (link the tracking issue for cross-repository work):
+
 ## Evidence
 
 - [ ] I ran the repository-local required checks.
