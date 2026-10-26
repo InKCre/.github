@@ -1,6 +1,6 @@
 name: Propose a task
 description: Propose a feature, improvement, or documentation task with an observable outcome.
-labels: [enhancement]
+type: Task
 body:
   - type: textarea
     id: outcome

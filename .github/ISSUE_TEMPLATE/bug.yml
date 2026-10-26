@@ -1,6 +1,6 @@
 name: Report a bug
 description: Describe the operation, expected behavior, and actual result.
-labels: [bug]
+type: Bug
 body:
   - type: textarea
     id: behavior

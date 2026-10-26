@@ -65,9 +65,13 @@ production credentials or publish a canonical release.
 
 ## Triage and pull-request handoff
 
-Maintainers first confirm the problem and responsible repository, then record the next action. Apply `needs-info` with a specific request for missing observations. Apply `blocked` with a link to the dependency and the condition that clears it. Use `area/*` for implementation areas, and `bug`, `enhancement`, or `documentation` for work types. Use GitHub's native open/closed, draft, and reviewer state.
+Maintainers first confirm the problem and responsible repository, then record the next action. Use the native issue type: **Bug** for incorrect behavior, **Feature** for a new capability, or **Task** for other concrete work. The proposal form defaults to Task; adjust it after confirming scope. Ask for missing observations in a specific comment. Record issue-to-issue blockers with GitHub's native dependencies; describe external prerequisites and the condition that clears them in the issue or PR. Use GitHub's native open/closed, draft, and reviewer state.
+
+The current board uses Project **Status** for coordination stage and Project **Priority** when prioritization is needed. These fields cover both issues and PRs; organization issue fields do not apply to PRs. Keep one source for each concept rather than also assigning status or priority labels or duplicating them in organization fields. Repository identity and the affected projects named in the issue or PR provide scope; add an area label only for a demonstrated routing or filtering need.
 
 `help wanted` identifies work with a defined scope and acceptance criteria that welcomes external contributions. Add `good first issue` only when it also has a code or documentation starting point, needs no organization-private credentials, and names a contact willing to help. The contact and implementation assignee may differ: name the contact in the issue, then assign implementation after a contributor confirms they are taking it. Create opportunities from real work rather than placeholder tasks.
+
+Use `documentation` where it helps contributors find documentation work. Retain labels required by dependency bots or release automation. Existing labels on historical items remain useful context, but do not copy the full legacy label set into new repositories or new work. PR titles and descriptions carry their change type; PRs do not have a native issue type.
 
 When marking a PR ready, the author states the feedback needed, outstanding acceptance or delivery work, and the person or team responsible for responding next. A maintainer who accepts the handoff sets the assignee and requests a capable reviewer other than the author when available. With one available maintainer, record the manual review and acceptance conclusion publicly. Existing Governance still owns branch protection; this workflow adds neither self-approval nor an implicit approval requirement.
 
