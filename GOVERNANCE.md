@@ -172,11 +172,15 @@ R2 bucket credentials. Closing the PR retires its app and deletes those resource
 
 Check names and commands remain repository-local implementation truth. The
 profiles standardize authority and evidence semantics, not identical jobs.
+The legacy `client-web E2E` and `client-webext E2E` context identifiers remain
+bound to branch protection during the Web/WebExt naming migration. They are
+compatibility identifiers, not product names; changing them requires coordinated
+workflow and protection updates without a gap in required evidence.
 
 For `impl-ts`, required E2E owns a fresh, data-free PostgreSQL runtime and
 runs the real immutable core service selected through its production-admitted
 `stable` channel. This proves current delivery remains compatible without
-requiring every unrelated pull request to regenerate the client's declared
+requiring every unrelated pull request to regenerate the consumer's declared
 database projection. The human Pages preview proves the checked
 environment-neutral web artifact and deterministic preview alias; it does not
 imply a cloned production database or an automatically configured full-stack
