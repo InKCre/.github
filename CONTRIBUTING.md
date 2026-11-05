@@ -33,8 +33,8 @@ See [Get involved](SUPPORT.md) for questions, bug reports, contribution opportun
 Use `type(scope): summary` for commit subjects and pull-request titles, with `feat`, `fix`, `ref`,
 `docs`, or `chore` as the type. The title becomes the main commit subject after the default squash
 merge, so write it for repository history rather than the temporary branch. Use the repository
-guide's stable project or implementation area as `scope`, for example `core`, `cli`, `client-web`,
-`client-webext`, or an Extension ID. For a coherent change that
+guide's stable project or implementation area as `scope`, for example `core`, `cli`, `web`,
+`webext`, or an Extension ID. For a coherent change that
 crosses several projects, use an umbrella such as `extensions` or `release`; do not pack every project
 name into the title.
 
